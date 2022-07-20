@@ -4,21 +4,25 @@
 // последовательности, то есть элемента, который будет наибольшим, если
 // из последовательности удалить наибольший элемент.
 
-Console.WriteLine("Введите последовательность из не менее 2 натуральных неотрицательных чисел, завершающуюся числом 0: ");
-string A = Console.ReadLine();
-int N = A.Length;
+Console.WriteLine("Введите число: ");
+int [] array = new int [100];
+int i = 0;
+int number;
 
-int [] array = new int [N];
-for ( int i = 0; i < N; i++)
+do
 {
-    array [i] = A [i] - 48; // Это момент, про который я вас спрашивала. Не придумала ничего лучше, чем вычесть 48, в таком виде работает, но я не знаю почему.
+    number = Convert.ToInt32(Console.ReadLine());
+    array[i] = number;
+    i++;
 }
+while (number != 0);
+
 Console.WriteLine();
 
 int numb = 0;
 int maximum = array[numb];
 int maxNumb = 0;
-while (numb  < N)
+while (numb  < 100)
 {
     if (array[numb] > maximum)
     {
@@ -29,14 +33,11 @@ while (numb  < N)
     numb++;
 }
 
-Console.WriteLine("Максимальное число = " + maximum);
-
-
 int index = 0;
 int secondMaximum = array[index];
 if (maxNumb == 0)                          
     secondMaximum = array[1];            
-while (index < N)
+while (index < 100)
 {
     if (index == maxNumb)
     {
@@ -53,6 +54,3 @@ while (index < N)
 }
 
 Console.WriteLine("Второе максимальное число = " + secondMaximum);
-
-// Решение работает только для однозначных чисел, т.к. не придумала,
-// как решить без массива, и как добавить многозначные числа в массив.
