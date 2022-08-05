@@ -4,53 +4,74 @@
 // последовательности, то есть элемента, который будет наибольшим, если
 // из последовательности удалить наибольший элемент.
 
-Console.WriteLine("Введите число: ");
-int [] array = new int [100];
-int i = 0;
-int number;
+// Console.WriteLine("Введите число: ");
+// int [] array = new int [100];
+// int i = 0;
+// int number;
 
-do
+// do
+// {
+//     number = Convert.ToInt32(Console.ReadLine());
+//     array[i] = number;
+//     i++;
+// }
+// while (number != 0);
+
+// Console.WriteLine();
+
+// int numb = 0;
+// int maximum = array[numb];
+// int maxNumb = 0;
+// while (numb  < 100)
+// {
+//     if (array[numb] > maximum)
+//     {
+//         maximum = array[numb];
+//         maxNumb = numb;
+//     }
+
+//     numb++;
+// }
+
+// int index = 0;
+// int secondMaximum = array[index];
+// if (maxNumb == 0)                          
+//     secondMaximum = array[1];            
+// while (index < 100)
+// {
+//     if (index == maxNumb)
+//     {
+//         index++;
+//     }
+//     else
+//     {
+//         if(array[index] > secondMaximum)
+//         {
+//             secondMaximum = array[index];
+//         }
+//         index++;
+//     }
+// }
+
+// Console.WriteLine("Второе максимальное число = " + secondMaximum);
+
+
+
+int n = Convert.ToInt32(Console.ReadLine());
+int max_first = n;
+int max_second = -1;
+while (n != 0)
 {
-    number = Convert.ToInt32(Console.ReadLine());
-    array[i] = number;
-    i++;
-}
-while (number != 0);
-
-Console.WriteLine();
-
-int numb = 0;
-int maximum = array[numb];
-int maxNumb = 0;
-while (numb  < 100)
+n = Convert.ToInt32(Console.ReadLine());
+if (n > max_first)
 {
-    if (array[numb] > maximum)
-    {
-        maximum = array[numb];
-        maxNumb = numb;
-    }
-
-    numb++;
+max_second = max_first;
+max_first = n;
 }
-
-int index = 0;
-int secondMaximum = array[index];
-if (maxNumb == 0)                          
-    secondMaximum = array[1];            
-while (index < 100)
+else
 {
-    if (index == maxNumb)
-    {
-        index++;
-    }
-    else
-    {
-        if(array[index] > secondMaximum)
-        {
-            secondMaximum = array[index];
-        }
-        index++;
-    }
+if (n > max_second)
+max_second = n;
 }
-
-Console.WriteLine("Второе максимальное число = " + secondMaximum);
+}
+Console.WriteLine(max_second);
